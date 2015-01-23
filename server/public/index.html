@@ -1,0 +1,37 @@
+
+<html>
+  <head>
+    <title>MarcoServer</title>
+   
+   
+	
+   <script src="//www.parsecdn.com/js/parse-1.3.3.min.js"></script>
+
+	
+	 
+  </head>
+  <body>
+   
+   <button type ="submit" onclick="sendPassword()">submit</button>
+<!--<input type="text" name="username"><br>
+   <input type="password" name="pwd"> -->
+  <script>
+ Parse.initialize("Z8KSlQyzuWQKn449idqkqNYbiH7HWy09US0ws0Ci", "zDzVGtrgvtFN0Sxs6YjkuOq9leznJ4UguavX6bdt");
+ 
+ function sendPassword(){
+  
+ Parse.Cloud.run("login" ,{},{
+ success: function(result) {
+ response.success("works");
+ },
+ error: function(error){
+  response.error("bad");
+ }
+ });
+  };
+  </script>
+  
+  
+  </body>
+  
+</html>
